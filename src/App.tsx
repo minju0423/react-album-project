@@ -1,16 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router"
 
 //페이지 컴포넌트
-import MainPage from "@pages/index"
-import AboutPage from "@pages/about"
+import MainPage from "@pages/index/index"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route index path="/" element={<MainPage/>} ></Route>
-        <Route path="/about" element={<AboutPage/>} ></Route>
-        <Route path="/about/:id" element={<AboutPage/>} ></Route>
       </Routes>
     </BrowserRouter>
   )
