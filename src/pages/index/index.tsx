@@ -2,6 +2,7 @@ import CommonFooter from "@/components/common/footer/CommonFooter"
 import CommonHeader from "@/components/common/header/CommonHeader"
 import CommonNav from "@/components/common/navigation/CommonNav"
 import CommonSearchBar from "@/components/common/searchBar/CommonSearchBar"
+import DetailDialog from "@/components/common/dialog/DetailDialog"
 import Card from "./components/Card"
 
 import styles from "./styles/index.module.scss"
@@ -44,6 +45,7 @@ function index() {
             </div>
             {/**공통 푸터 UI 부분 */}
             <CommonFooter/>
+            <DetailDialog/>
         </div>
     )
 }
