@@ -1,5 +1,5 @@
 ## Unsplash Image API를 활용한 이미지 검색 사이트 만들기
-
+![image](https://github.com/user-attachments/assets/87936264-2742-4d8b-9330-50f2015fac57)
 ## 💻 개발환경
 1. 프로젝트 환경설정(vite를 활용한 React 프로젝트) 설치 : 	`npm install vite@latest` <br/>
 2. React 중앙집중식 상태관리 Recoil 설치 : `npm install recoil` <br/>
@@ -41,6 +41,5 @@
 - 예 : `feature/router`
 - 작업 완료 후 day 브랜치 생성 → PR
 ---
-![image](https://github.com/user-attachments/assets/87936264-2742-4d8b-9330-50f2015fac57)
 
 📺 [2024 React Full Course (feat. Recoil) React Basic 강의](https://youtu.be/Yv5tSNr4h2c?si=cIBt-N91Y3j-zKzE)
