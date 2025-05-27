@@ -4,6 +4,7 @@ import CommonNav from "@/components/common/navigation/CommonNav"
 import CommonSearchBar from "@/components/common/searchBar/CommonSearchBar"
 import DetailDialog from "@/components/common/dialog/DetailDialog"
 import Card from "./components/Card"
+import Loading from "./components/Loading"
 
 import styles from "./styles/index.module.scss"
 // import { useState } from "react"
@@ -30,7 +31,7 @@ function index() {
             })
             return result
         }else{
-            return <div>loading...</div>
+            return <Loading/>
         }
     }, [imgSelector])
     
