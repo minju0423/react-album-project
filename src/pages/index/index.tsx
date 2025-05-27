@@ -4,6 +4,7 @@ import CommonNav from "@/components/common/navigation/CommonNav"
 import CommonSearchBar from "@/components/common/searchBar/CommonSearchBar"
 import DetailDialog from "@/components/common/dialog/DetailDialog"
 import Card from "./components/Card"
+import Loading from "./components/Loading"
 
 import styles from "./styles/index.module.scss"
 // import { useState } from "react"
@@ -23,14 +24,14 @@ function index() {
     const CARD_LIST = useMemo(() => {
         //imageSeletor.state = hasValue or loading
         if(imgSelector.state === 'hasValue'){
-            const result = imgSelector.contents.map((card : CardDTO)=>{
+            const result = imgSelector.contents.results.map((card : CardDTO)=>{
                 return (
                     <Card data={card} key={card.id} handleDialog={setOpen} handleSetData={setImgData}/>
                 )
             })
             return result
         }else{
-            return <div>loading...</div>
+            return <Loading/>
         }
     }, [imgSelector])
     
