@@ -41,4 +41,6 @@
 - 예 : `feature/router`
 - 작업 완료 후 day 브랜치 생성 → PR
 ---
+![image](https://github.com/user-attachments/assets/87936264-2742-4d8b-9330-50f2015fac57)
+
 📺 [2024 React Full Course (feat. Recoil) React Basic 강의](https://youtu.be/Yv5tSNr4h2c?si=cIBt-N91Y3j-zKzE)
