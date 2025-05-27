@@ -20,9 +20,14 @@ function index() {
         <div className={styles.page}>
             <CommonHeader/>
             <main className={styles.page__contents}>
-                {data.map((item : CardDTO)=>{
-                   return <Card prop={item} key={item.id}/>
-                })}
+                {/* 데이터가 없을때 */}
+                {data.length === 0 ? (<div className={styles.page__contents__noData}>조회 가능한 데이터가 없습니다.</div>) : 
+                (
+                    data.map((item : CardDTO)=>{
+                       return <Card prop={item} key={item.id}/>
+                    })
+
+                )}
             </main>
         </div>
     )
