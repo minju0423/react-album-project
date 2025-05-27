@@ -1,14 +1,19 @@
-import { useRecoilState, useRecoilValueLoadable } from 'recoil'
+import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from 'recoil'
 import styles from './CommonFooter.module.scss'
 import { imageData } from '@/recoil/seletors/imageSelector'
 import { pageState } from '@/recoil/atoms/pageState'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { searchState } from '@/recoil/atoms/searchState'
 
 function CommonFooter() {
   const imgSelector = useRecoilValueLoadable(imageData)
+  const search = useRecoilValue(searchState)
   const [page, setPage] = useRecoilState(pageState)
   const [step, setStep] = useState<number>(0)
 
+  useEffect(() => {
+    setStep(0)
+  }, [search])
   //페이지 리스트 UI 생성
   const newArr : number[] = new Array()
   for(let i=1; i<= imgSelector.contents.total_pages; i++){
@@ -50,16 +55,16 @@ function CommonFooter() {
                 <img src='src/assets/icons/icon-arrowLeft.svg'/>
             </button>
             {/* 변경될 UI 부분 */}
-            {res[step] && res[step].map((page : number, index : number) => {
-              if(page < 11){
+            {res[step] && res[step].map((item : number, index : number) => {
+              if(item < 11){
                 return (
                   <button className={index === page -1 ? `${styles.pagination__button} ${styles.active}` : `${styles.pagination__button} ${styles.inactive}`} 
-                          key={page} onClick={()=> moveToPage(page)}>{page}</button>
+                          key={item} onClick={()=> moveToPage(item)}>{item}</button>
                 )
               }else{
                 return (
                   <button className={index === page -1 - step * 10 ? `${styles.pagination__button} ${styles.active}` : `${styles.pagination__button} ${styles.inactive}`} 
-                          key={page} onClick={()=> moveToPage(page)}>{page}</button>
+                          key={item} onClick={()=> moveToPage(item)}>{item}</button>
                 )
               }
             })}
