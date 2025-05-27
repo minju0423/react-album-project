@@ -11,9 +11,11 @@ function CommonFooter() {
   const [page, setPage] = useRecoilState(pageState)
   const [step, setStep] = useState<number>(0)
 
+  //검색어가 변경될 때 step 초기화
   useEffect(() => {
     setStep(0)
   }, [search])
+
   //페이지 리스트 UI 생성
   const newArr : number[] = new Array()
   for(let i=1; i<= imgSelector.contents.total_pages; i++){
@@ -29,10 +31,11 @@ function CommonFooter() {
   }
 
 
-
+  //페이지 이동 구현
   const moveToPage = (selected : number) => {
     setPage(selected)
   }
+  //이전 페이지 동작 구현
   const moveToPrev =  () => {
     if(step === 0) return
     else {
@@ -40,7 +43,7 @@ function CommonFooter() {
       setPage(res[step-1][0])
     }
   }
-
+  //다음 페이지 동작 구현
   const moveToNext = () => {
     if(step < res[step].length -2){
       setStep(step+1)
